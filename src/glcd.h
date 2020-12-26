@@ -41,6 +41,7 @@ union COLOR
 	unsigned short COLOR;
 } ;
 
+
 enum lcd_retval_e
 {
 	lcd_ok = 0, lcd_prev_alloc = -1, lcd_alloc_er = -2, lcd_hard_er = -3,

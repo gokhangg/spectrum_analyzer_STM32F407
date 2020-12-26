@@ -8,6 +8,7 @@ CSOURCES   := $(filter %.c,$(ALL_FOUND))
 CPPSOURCES := $(filter %.cpp,$(ALL_FOUND))
 ASMSOURCES := $(filter %.S,$(ALL_FOUND))
 
+
 INCLUDE_DIRS := $(sort $(dir $(filter %.h %.hxx,$(ALL_FOUND))))
 
 CD       := @cd
@@ -63,9 +64,11 @@ LDFLAGS := $(ARC_FLAGS) \
 
 
 BIN_FILE  := $(TARGET_NAME).bin
+
 ELF_FILE  := $(TARGET_NAME).elf
 
 OBJECTS := $(patsubst %,$(TARGET)/%,$(patsubst %.c,%.o,$(CSOURCES)) $(patsubst %.cpp,%.o,$(CPPSOURCES)) $(patsubst %.S,%.o,$(ASMSOURCES)))
+
 BUILD_DIR := $(sort $(dir $(OBJECTS)))
 
 ELF := $(TARGET_NAME).elf
@@ -78,8 +81,6 @@ _DEFINES      := $(patsubst %,-D%,$(DEFINES))
 all: 
 	$(MAKE) mkdir
 	$(MAKE) build
-
-
 
 build: $(OBJECTS)
 	$(ECHO) 
@@ -103,6 +104,7 @@ $(TARGET)/%.o: %.cpp
 	$(ECHO) 
 	$(ECHO) Compiling: $<
 	$(CCPP) $(CPP_BUILD_FLAGS) $(_INCLUDE_DIRS) $(_DEFINES) -c $< -o $@
+
 
 mkdir:
 	$(MKDIR) $(dir $(OBJECTS))

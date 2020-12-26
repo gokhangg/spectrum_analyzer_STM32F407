@@ -28,6 +28,7 @@ int main(void)
 		;
 }
 
+
 void spectrum_analyzer(__attribute__((unused)) void *pvParameters)
 {
 
@@ -59,7 +60,7 @@ void touchpad(__attribute__((unused))void *pvParameters)
 		vTaskDelayUntil(&xLastWakeTime, 50);
 	}
 }
- 
+
 void screen(__attribute__((unused)) void *pvParameters)
 {
 
