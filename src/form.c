@@ -7,7 +7,7 @@
 
 #include "form.h"
 
-form_t *form_p;
+static form_t *form_p;
 
 void events_(void)
 {

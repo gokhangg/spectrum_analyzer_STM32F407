@@ -7,7 +7,7 @@
 
 #include "touchpad.h"
 
-touchpad_t *touchpad_p;
+static touchpad_t *touchpad_p;
 
 position_t position_old;
 position_t position_new;
@@ -25,7 +25,7 @@ void touchpad_init2(void)
 
 tp_return_e touchpad_init(touchpad_t **touchpad_pp,
 		unsigned int (*hardware_init)(void),
-		unsigned int (*hardware_deinit)(void))
+		__attribute__((unused)) unsigned int (*hardware_deinit)(void))
 {
 
 	if (touchpad_p != NULL)

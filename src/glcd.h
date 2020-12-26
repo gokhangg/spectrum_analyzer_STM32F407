@@ -30,7 +30,7 @@ enum
 	lcd_ver_down = 2, lcd_ver_up = 1, lcd_hor = 0,
 };
 
-union
+union COLOR
 {
 	struct
 	{
@@ -39,7 +39,8 @@ union
 		unsigned R :5;
 	};
 	unsigned short COLOR;
-} COLOR;
+} ;
+
 
 enum lcd_retval_e
 {

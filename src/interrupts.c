@@ -21,10 +21,6 @@ void interrupts_init(void)
 
 }
 
-void assert_param(uint8_t* file, uint32_t line)
-{
-}
-
 void SPI2_IRQHandler(void)
 {
 

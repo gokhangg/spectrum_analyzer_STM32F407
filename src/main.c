@@ -28,7 +28,8 @@ int main(void)
 		;
 }
 
-void spectrum_analyzer(void *pvParameters)
+
+void spectrum_analyzer(__attribute__((unused)) void *pvParameters)
 {
 
 	uint32_t xLastWakeTime = xTaskGetTickCount();
@@ -46,7 +47,7 @@ void spectrum_analyzer(void *pvParameters)
 	}
 }
 
-void touchpad(void *pvParameters)
+void touchpad(__attribute__((unused))void *pvParameters)
 {
 	uint32_t xLastWakeTime = xTaskGetTickCount();
 	touchpad_t *touchpad_p;
@@ -60,7 +61,7 @@ void touchpad(void *pvParameters)
 	}
 }
 
-void screen(void *pvParameters)
+void screen(__attribute__((unused)) void *pvParameters)
 {
 
 	uint32_t xLastWakeTime = xTaskGetTickCount();
